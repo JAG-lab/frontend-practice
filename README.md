@@ -1,5 +1,4 @@
 # frontend-practice
-Where I upload my practice on front end technologies, namely HTML5, CSS, JS, as well as others like Jquery, React and so on
 
 Since I'm just starting out, I'm mostly just looking up tutorials on websites such as youtube for the apps I make, then iterating on that with whatever
 tech I'm trying to learn at the moment; I'm not looking to make the finished app better than what the original was, only to explore how different techs

@@ -19,17 +19,29 @@ class Calculator {
   }
 
   delete() {
-    this.setValues(this.previousOperand, this.currentOperand.toString().slice(0, -1), this.operation);
+    this.setValues(
+      this.previousOperand,
+      this.currentOperand.toString().slice(0, -1),
+      this.operation
+    );
   }
 
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) return;
-    this.setValues(this.previousOperand, (this.currentOperand.toString() + number.toString()), this.operation);
+    this.setValues(
+      this.previousOperand,
+      this.currentOperand.toString() + number.toString(),
+      this.operation
+    );
   }
 
   negate() {
-    if (this.currentOperand === '' || this.currentOperand === '.') return;
-    this.setValues(this.previousOperand, ((-1 * parseFloat(this.currentOperand)).toString()), this.operation)
+    if (this.currentOperand === "" || this.currentOperand === ".") return;
+    this.setValues(
+      this.previousOperand,
+      (-1 * parseFloat(this.currentOperand)).toString(),
+      this.operation
+    );
   }
 
   chooseOperation(operation) {
@@ -63,15 +75,18 @@ class Calculator {
         break;
       case "√":
         if (prev < 0 && !(curr % 2)) {
-          computation = 'Cannot compute';
+          computation = "Cannot compute";
           break;
         }
-        let n = (prev < 0) ? (prev * -1) : prev;
-        computation = !(curr % 2) && (prev < 0) ? -Math.pow(n, (1/curr)) : Math.pow(n, (1/curr));
+        let n = prev < 0 ? prev * -1 : prev;
+        computation =
+          !(curr % 2) && prev < 0
+            ? -Math.pow(n, 1 / curr)
+            : Math.pow(n, 1 / curr);
         break;
       case "LOG":
         if (prev < 0 || curr < 0) {
-          computation = 'Cannot compute';
+          computation = "Cannot compute";
           break;
         }
         computation = Math.log(curr) / Math.log(prev);
@@ -100,9 +115,13 @@ class Calculator {
   }
 
   updateDisplay() {
-    if (this.currentOperand === 'Cannot compute' || this.previousOperand === 'Cannot compute'){
-      $(".currDataRender")[0].innerText = this.currentOperand.toString() + this.previousOperand.toString();
-      $(".prevDataRender")[0].innerText = '';
+    if (
+      this.currentOperand === "Cannot compute" ||
+      this.previousOperand === "Cannot compute"
+    ) {
+      $(".currDataRender")[0].innerText =
+        this.currentOperand.toString() + this.previousOperand.toString();
+      $(".prevDataRender")[0].innerText = "";
       this.previousOperand = "";
       this.currentOperand = "";
       this.operation = undefined;
@@ -116,23 +135,37 @@ class Calculator {
         this.previousOperand
       )} ${this.operation}`;
     } else {
-      $(".prevDataRender")[0].innerText = '';
+      $(".prevDataRender")[0].innerText = "";
     }
   }
 }
 
 const calculator = new Calculator();
 
-$(".numberButton").click((e) => {calculator.appendNumber(e.currentTarget.innerText)});
+$(".numberButton").click((e) => {
+  calculator.appendNumber(e.currentTarget.innerText);
+});
 
-$(".operationButton").click((e) => {calculator.chooseOperation(e.currentTarget.innerText)});
+$(".operationButton").click((e) => {
+  calculator.chooseOperation(e.currentTarget.innerText);
+});
 
-$(".equalsButton").click(() => {calculator.compute()});
+$(".equalsButton").click(() => {
+  calculator.compute();
+});
 
-$(".allClearButton").click(() => {calculator.clear()});
+$(".allClearButton").click(() => {
+  calculator.clear();
+});
 
-$(".partialClearButton").click(() => {calculator.partialClear()});
+$(".partialClearButton").click(() => {
+  calculator.partialClear();
+});
 
-$(".deleteButton").click(() => {calculator.delete()});
+$(".deleteButton").click(() => {
+  calculator.delete();
+});
 
-$(".negateButton").click(() => {calculator.negate()});
+$(".negateButton").click(() => {
+  calculator.negate();
+});

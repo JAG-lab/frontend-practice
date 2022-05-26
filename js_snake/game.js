@@ -28,15 +28,15 @@ const gameBoard = $("#game-board")[0];
 function main(currentTime) {
   if (gameOver) {
     if (confirm("You lost. Press OK to restart")) {
-        updateHighScore();
-        clearSnake();
-        clearDirection();
-        grabSettings();
-        currentSpeed = $('#speed-input').val();
-        currentGrowthRate = $('#growth-input').val();
-        currentBoardSize = $('#size-input').val();
-        gameOver = false;
-        window.requestAnimationFrame(main);
+      updateHighScore();
+      clearSnake();
+      clearDirection();
+      grabSettings();
+      currentSpeed = $("#speed-input").val();
+      currentGrowthRate = $("#growth-input").val();
+      currentBoardSize = $("#size-input").val();
+      gameOver = false;
+      window.requestAnimationFrame(main);
     } else return;
   }
   window.requestAnimationFrame(main);
@@ -48,21 +48,21 @@ function main(currentTime) {
 }
 
 grabSettings();
-currentSpeed = $('#speed-input').val();
-currentGrowthRate = $('#growth-input').val();
-currentBoardSize = $('#size-input').val();
+currentSpeed = $("#speed-input").val();
+currentGrowthRate = $("#growth-input").val();
+currentBoardSize = $("#size-input").val();
 window.requestAnimationFrame(main);
 
-$(':button').click(() => {
-    updateHighScore();
-    clearSnake();
-    clearDirection();
-    grabSettings();
-    currentSpeed = $('#speed-input').val();
-    currentGrowthRate = $('#growth-input').val();
-    currentBoardSize = $('#size-input').val();
-    gameOver = false;
-    window.requestAnimationFrame(main);
+$(":button").click(() => {
+  updateHighScore();
+  clearSnake();
+  clearDirection();
+  grabSettings();
+  currentSpeed = $("#speed-input").val();
+  currentGrowthRate = $("#growth-input").val();
+  currentBoardSize = $("#size-input").val();
+  gameOver = false;
+  window.requestAnimationFrame(main);
 });
 
 function update() {
@@ -82,12 +82,13 @@ function checkDeath() {
 }
 
 function updateHighScore() {
-    if (highestSpeed < currentSpeed) highestSpeed = currentSpeed;
-    if (highestGrowthRate < currentGrowthRate) highestGrowthRate = currentGrowthRate;
-    if (lowestBoardSize > currentBoardSize) lowestBoardSize = currentBoardSize;
-    if (longestSnake < snakeLength()) longestSnake = snakeLength();
-    $('#score').text(longestSnake + '!');
-    $('#speed').text('With snake speed: ' + highestSpeed);
-    $('#growth').text('Growth rate: ' + highestGrowthRate);
-    $('#board-size').text('Board size: ' + lowestBoardSize);
+  if (highestSpeed < currentSpeed) highestSpeed = currentSpeed;
+  if (highestGrowthRate < currentGrowthRate)
+    highestGrowthRate = currentGrowthRate;
+  if (lowestBoardSize > currentBoardSize) lowestBoardSize = currentBoardSize;
+  if (longestSnake < snakeLength()) longestSnake = snakeLength();
+  $("#score").text(longestSnake + "!");
+  $("#speed").text("With snake speed: " + highestSpeed);
+  $("#growth").text("Growth rate: " + highestGrowthRate);
+  $("#board-size").text("Board size: " + lowestBoardSize);
 }

@@ -1,6 +1,6 @@
-import { setSnakeSpeed, setSnakeStartPos } from './snake.js';
-import { setGrowthRate, setFirstFood } from './food.js';
-import { setGridSize } from './grid.js';
+import { setSnakeSpeed, setSnakeStartPos } from "./snake.js";
+import { setGrowthRate, setFirstFood } from "./food.js";
+import { setGridSize } from "./grid.js";
 
 let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0 };
@@ -27,8 +27,8 @@ window.addEventListener("keydown", (e) => {
 });
 
 export function clearDirection() {
-    inputDirection = { x : 0, y : 0};
-    lastInputDirection = { x : 0, y : 0};
+  inputDirection = { x: 0, y: 0 };
+  lastInputDirection = { x: 0, y: 0 };
 }
 
 export function getInputDirection() {
@@ -37,9 +37,9 @@ export function getInputDirection() {
 }
 
 export function grabSettings() {
-    setSnakeSpeed($('#speed-input').val());
-    setGrowthRate($('#growth-input').val());
-    setGridSize($('#size-input').val());
-    setSnakeStartPos();
-    setFirstFood();
+  setSnakeSpeed($("#speed-input").val());
+  setGrowthRate($("#growth-input").val());
+  setGridSize($("#size-input").val());
+  setSnakeStartPos();
+  setFirstFood();
 }

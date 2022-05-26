@@ -6,19 +6,19 @@ let snakeBody = [{ x: 0, y: 0 }];
 let newSegments = 0;
 
 export function setSnakeSpeed(speed) {
-    SNAKE_SPEED = speed;
+  SNAKE_SPEED = speed;
 }
 
 export function setSnakeStartPos() {
-    snakeBody[0] = middlePosition();
+  snakeBody[0] = middlePosition();
 }
 
 export function clearSnake() {
-    snakeBody = [{ x: 0, y : 0}];
+  snakeBody = [{ x: 0, y: 0 }];
 }
 
 export function snakeLength() {
-    return snakeBody.length;
+  return snakeBody.length;
 }
 
 export function update() {

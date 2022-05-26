@@ -1,9 +1,25 @@
 import { getInputDirection } from "./input.js";
-import { equalPositions } from "./grid.js";
+import { equalPositions, middlePosition } from "./grid.js";
 
-export const SNAKE_SPEED = 10;
-const snakeBody = [{ x: 11, y: 11 }];
+export let SNAKE_SPEED = 0;
+let snakeBody = [{ x: 0, y: 0 }];
 let newSegments = 0;
+
+export function setSnakeSpeed(speed) {
+    SNAKE_SPEED = speed;
+}
+
+export function setSnakeStartPos() {
+    snakeBody[0] = middlePosition();
+}
+
+export function clearSnake() {
+    snakeBody = [{ x: 0, y : 0}];
+}
+
+export function snakeLength() {
+    return snakeBody.length;
+}
 
 export function update() {
   addSegments();

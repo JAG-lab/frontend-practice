@@ -6,17 +6,13 @@ body {
   align-items: center;
   margin: 0;
   background-color: black;
-  column-gap: 20px;
+  column-gap: 2rem;
 }
 
 #game-board {
   aspect-ratio: 1/1;
   background-color: #ccc;
-  width: 100vmin;
-  height: 100vmin;
   display: grid;
-  grid-template-rows: repeat(21, 1fr);
-  grid-template-columns: repeat(21, 1fr);
   flex: 0 5 100vmin;
 }
 
@@ -33,25 +29,21 @@ body {
 #game-inputs {
   aspect-ratio: 0.78/1;
   background-color: wheat;
-  width: 25vmin;
-  height: 40vmin;
   line-height: 2vmin;
   display: inline-block;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  flex: 0 5 25vmin;
+  flex: 0 5 30vmin;
 }
 
 #game-score {
   aspect-ratio: 0.78/1;
   background-color: wheat;
-  width: 25vmin;
-  height: 40vmin;
   line-height: 2vmin;
   display: inline-block;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  flex: 0 5 25vmin;
+  flex: 0 5 30vmin;
 }
 
 h1 {
@@ -66,5 +58,13 @@ input {
   background-color: wheat;
   font-size: 2vmin;
   width: 80%;
+  overflow: hidden;
+}
+
+button {
+  font-size: 2vmin;
+  background-color: blanchedalmond;
+  width: 50%;
+  margin-top: 1rem;
   overflow: hidden;
 }

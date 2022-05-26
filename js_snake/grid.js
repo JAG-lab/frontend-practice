@@ -1,4 +1,12 @@
-const GRID_SIZE = 21;
+export let GRID_SIZE = 0;
+
+export function setGridSize(size) {
+  GRID_SIZE = size;
+  $("#game-board").css({
+    "grid-template-rows": "repeat(" + GRID_SIZE + ", 1fr)",
+    "grid-template-columns": "repeat(" + GRID_SIZE + ", 1fr)",
+  });
+}
 
 export function randomGridPosition() {
   return {
@@ -13,4 +21,8 @@ export function outsideGrid(pos) {
 
 export function equalPositions(pos1, pos2) {
   return pos1.x === pos2.x && pos1.y === pos2.y;
+}
+
+export function middlePosition() {
+  return { x: Math.floor(GRID_SIZE / 2) + 1, y: Math.floor(GRID_SIZE / 2) + 1 };
 }

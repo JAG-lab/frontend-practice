@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <script type="text/javascript" src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="selector">
+        <div class="selector__title">Selected:</div>
+        <div class="selector__current"></div>
+        <div class="selector__buttons">
+            <button class="selector__red"></button>
+            <button class="selector__yellow"></button>
+            <!-- <button class="selector__green"></button> -->
+            <button class="selector__blue"></button>
+        </div>
+    </div>
+    <div class="grid"></div>
+    <div class="error-count">
+        <div class="error-count__count">
+            <div class="error-count__title">Errors:</div>
+            <div class="error-count__current"><h2 class="error-count__num">0/3</h2></div>
+        </div>
+        <button class="error-count__reset">Reset!</button>
+    </div>
+</body>
+</html>

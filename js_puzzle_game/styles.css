@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #827de3, #c96b74);
+}
+
+.selector {
+    background: #e6c740;
+    aspect-ratio: .25/1;
+    height: 40rem;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selector__title {
+    font-size: 1.5rem;
+}
+
+.selector__current {
+    aspect-ratio: 1/1;
+    background: red;
+    height: 5rem;
+    border-radius: 2.5rem;
+    margin-top: .8rem;
+}
+
+.selector__notice {
+    font-size: .75rem;
+    margin-top: 2rem;
+}
+
+.selector__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.selector__buttons > button {
+    aspect-ratio: 1/.25;
+    width: 8rem;
+    border-radius: 0.8rem;
+}
+
+.selector__red {
+    background: red;
+}
+
+.selector__yellow {
+    background: yellow;
+}
+
+.selector__green {
+    background: green;
+}
+
+.selector__blue {
+    background: blue;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    aspect-ratio: 1/1;
+    height: 100vh;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-button:disabled {
+    color: black;
+}
+
+.error-count {
+    background: #e6c740;
+    aspect-ratio: .25/1;
+    height: 40rem;
+    border-radius: 1rem 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.error-count__title {
+    font-size: 1.5rem;
+}
+
+.error-count__current {
+    aspect-ratio: 1/1;
+    background: #d1a82e;
+    height: 5rem;
+    border-radius: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-count__reset {
+    aspect-ratio: 1/1;
+    background: #a80a24;
+    height: 5rem;
+    border-radius: 2.5rem;
+}
+
+.gameover {
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 50rem;
+    background: #000000C0;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
